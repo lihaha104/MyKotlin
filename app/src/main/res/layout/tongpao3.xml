@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="tongpao3"
+            type="com.example.shop.mytongpao.Stu" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:paddingHorizontal="@dimen/dp_15"
+    android:paddingVertical="@dimen/dp_10"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textColor="#000000"
+        android:id="@+id/title_tong"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{tongpao3.title}"/>
+
+    <ImageView
+        android:id="@+id/img11"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/title_tong"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100" />
+
+    <ImageView
+        android:id="@+id/img22"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img11"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100" />
+    <ImageView
+        android:id="@+id/img33"
+        android:scaleType="fitXY"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@id/img11"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E6DEDE"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@id/img33"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

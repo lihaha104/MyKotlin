@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="home_newgoods"
+            type="com.example.shop.bean.home.HomeData.NewGoods" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_newgood"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="centerInside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_newgood_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_newgood"
+            android:gravity="center_horizontal"
+            android:text="@{home_newgoods.name}"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/txt_newgood_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_newgood_name"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_14" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
