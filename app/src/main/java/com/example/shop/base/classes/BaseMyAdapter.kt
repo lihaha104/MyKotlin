@@ -21,8 +21,8 @@ open abstract class BaseMyAdapter<D>(val context: Context, var list:List<D>, val
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseVH {
         var dataBinding:ViewDataBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),viewType,parent,false)
+
         return BaseVH(dataBinding)
-       //return BaseVH(DataBindingUtil.inflate(LayoutInflater.from(parent.context),viewType,parent,false))
     }
 
     /**
@@ -36,6 +36,7 @@ open abstract class BaseMyAdapter<D>(val context: Context, var list:List<D>, val
         holder.dataBinding.setVariable(type,list.get(position))
         holder.dataBinding.root.tag = position
         bindData(holder.dataBinding,list.get(position))
+
     }
 
     override fun getItemCount(): Int {
@@ -53,10 +54,8 @@ open abstract class BaseMyAdapter<D>(val context: Context, var list:List<D>, val
 
     protected abstract fun bindData(binding: ViewDataBinding,data:D)
 
-
-    inner class BaseVH(val dataBinding:ViewDataBinding) :RecyclerView.ViewHolder(dataBinding.root)
-
     //内联函数  内部类
+    inner class BaseVH(val dataBinding:ViewDataBinding) :RecyclerView.ViewHolder(dataBinding.root)
     //inner class BaseVH(view:View) :RecyclerView.ViewHolder(view)
 
 

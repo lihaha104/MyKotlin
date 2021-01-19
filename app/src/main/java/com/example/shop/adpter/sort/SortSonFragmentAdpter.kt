@@ -1,5 +1,4 @@
 package com.example.shop.adpter.sort
-
 import android.content.Context
 import androidx.databinding.ViewDataBinding
 import com.example.shop.R
@@ -9,10 +8,9 @@ import com.shop.base.BaseMyAdapter
 class SortSonFragmentAdpter(context: Context?,list: List<SortData.SubCategory>):BaseMyAdapter<SortData.SubCategory>(context!!,list,
     R.layout.adpter_sort_son_fragment) {
     override fun layoutId(position: Int): Int {
-        TODO("Not yet implemented")
+        return layout
     }
 
     override fun bindData(binding: ViewDataBinding, data: SortData.SubCategory) {
-        TODO("Not yet implemented")
     }
 }

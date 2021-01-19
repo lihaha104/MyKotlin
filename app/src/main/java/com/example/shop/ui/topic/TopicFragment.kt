@@ -4,7 +4,6 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.base.IItemClick
 import com.example.shop.R
 import com.example.shop.adpter.topic.TopidFragmentAdpter
 import com.example.shop.bean.home.TopicData
@@ -55,10 +54,6 @@ class TopicFragment():BaseFragment<TopicViewModel,FragmentTopicBinding>(R.layout
     private fun top(){
         mDataBinding!!.nest.fullScroll(View.FOCUS_UP)
     }
-    class ItemClick: IItemClick<TopicData.DataX> {
-        override fun itemClick(data: TopicData.DataX) {
 
-        }
-    }
 
 }
