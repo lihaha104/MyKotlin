@@ -1,12 +1,11 @@
-package com.example.shop
+package com.example.shop.ui
 
-import android.app.SearchManager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.shop.mvvm.NewBindActivity
+import com.example.shop.R
+import com.example.shop.homework.HomeWorkActivity
 import com.example.shop.mytongpao.TongPaoActivity
-import com.example.shop.mytongpao.TongPaoAdpter
 import kotlinx.android.synthetic.main.activity_spalce2.*
 
 class SpalceActivity2 : AppCompatActivity() {
@@ -22,6 +21,8 @@ class SpalceActivity2 : AppCompatActivity() {
         tongpao.setOnClickListener {
             startActivity(Intent(this,TongPaoActivity::class.java))
         }
-
+        homework.setOnClickListener {
+            startActivity(Intent(this,HomeWorkActivity::class.java))
+        }
     }
 }

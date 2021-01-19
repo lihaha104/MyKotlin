@@ -1,7 +1,6 @@
 package com.shop.base
 
 import android.content.Context
-import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil

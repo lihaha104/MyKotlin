@@ -1,13 +1,10 @@
 package com.example.shop.mytongpao
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.SparseArray
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shop.BR
 import com.example.shop.R
-import com.example.shop.SpalceActivity2
 import com.example.shop.databinding.ActivityTongPaoBinding
 import com.shop.base.BaseActivity
 

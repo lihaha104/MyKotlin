@@ -36,12 +36,33 @@ class SystemRepository {
     suspend fun getHome()= withContext(Dispatchers.IO){
         serviceApi.getHome()
     }
-
-    /*
-    * 获得Brand
-    * */
+    //Brand
     suspend fun getBrand(page:String)= withContext(Dispatchers.IO){
         serviceApi.getBrand(page)
     }
+    //Goods
+    suspend fun getNewgoods(map:Map<String,String>)= withContext(Dispatchers.IO){
+        serviceApi.getNewgoods(map)
+    }
+
+    /*
+    * 获得Topic
+    * */
+    suspend fun getTopic(page: String)= withContext(Dispatchers.IO){
+        serviceApi.getTopic(page)
+    }
+
+    /*
+    * 获得分类
+    * */
+    //分类tab
+    suspend fun getSortTab()= withContext(Dispatchers.IO){
+        serviceApi.getSortTab()
+    }
+    //分类数据
+    suspend fun getSort(id: Int)= withContext(Dispatchers.IO){
+        serviceApi.getSort(id)
+    }
+
 
 }

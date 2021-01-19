@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.shop" >
+    package="com.example.shop">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,12 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true" >
-        <activity android:name=".fragment.home.HomeBrandTitleActivity" >
-        </activity>
-        <activity android:name=".fragment.home.BrandInfoActivity" />
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.home.HomeNewGoodTitleActivity"></activity>
+        <activity android:name=".homework.HomeWork2Activity" />
+        <activity android:name=".homework.HomeWorkActivity" />
+        <activity android:name=".ui.home.HomeBrandTitleActivity" />
+        <activity android:name=".ui.home.BrandInfoActivity" />
         <activity android:name=".mytongpao.TongPaoActivity" />
-        <activity android:name=".SpalceActivity2" >
+        <activity android:name=".ui.SpalceActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +28,7 @@
         <activity
             android:name=".mvvm.NewBindActivity"
             android:label="@string/title_activity_new_bind" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.MainActivity" />
     </application>
 
 </manifest>

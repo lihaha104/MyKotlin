@@ -19,6 +19,6 @@ class HomeCategoryAdpter(context: Context?,list: List<HomeData.Category>):BaseMy
         binding.setVariable(BR.home_category,data)
         val rcy = binding.root.findViewById<RecyclerView>(R.id.recy_category)
         rcy.layoutManager= GridLayoutManager(context,2)
-        rcy.adapter = HomeCategorySonAdapter(context, data.goodsList)
+        //rcy.adapter = HomeCategorySonAdapter(context, data.goodsList)
     }
 }

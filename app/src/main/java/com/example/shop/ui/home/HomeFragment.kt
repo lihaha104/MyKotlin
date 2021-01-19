@@ -1,4 +1,4 @@
-package com.example.shop.fragment.home
+package com.example.shop.ui.home
 
 import android.content.Intent
 import android.view.Gravity
@@ -15,8 +15,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.shop.R
 import com.example.shop.adpter.home.*
-import com.example.shop.databinding.FragmentHomeBinding
 import com.example.shop.bean.home.HomeData
+import com.example.shop.databinding.FragmentHomeBinding
+import com.example.shop.ui.MainActivity
 import com.example.shop.viewmodel.home.HomeViewModel
 import com.shop.base.BaseFragment
 import com.shop.ui.home.MyBannerAdapter
@@ -47,6 +48,17 @@ class HomeFragment() : BaseFragment<HomeViewModel, FragmentHomeBinding>(
             var intent = Intent(context, HomeBrandTitleActivity::class.java)
             startActivity(intent)
         })
+        //新品的跳转
+        txt_newgood_title.setOnClickListener {
+            var intent = Intent(context, HomeNewGoodTitleActivity::class.java)
+            startActivity(intent)
+        }
+        //专题的跳转
+        txt_topic_title.setOnClickListener {
+            var intent=Intent(context, MainActivity::class.java)
+            intent.putExtra("indext",1)//跳转到专提的fragent
+            startActivity(intent)
+        }
     }
 
     //绑定数据
@@ -104,7 +116,7 @@ class HomeFragment() : BaseFragment<HomeViewModel, FragmentHomeBinding>(
 
     //初始化Newgoods
     private fun initNewgoods(newGoodsList: List<HomeData.NewGoods>) {
-        mDataBinding!!.recyNewgood.layoutManager = GridLayoutManager(context, 2)
+        recy_newgood.layoutManager = GridLayoutManager(context, 2)
         mNewGoods = HomeNewGoodsAdpter(context, newGoodsList)//创建适配器
         mDataBinding!!.recyNewgood.adapter = mNewGoods//绑定适配器
     }
@@ -116,7 +128,6 @@ class HomeFragment() : BaseFragment<HomeViewModel, FragmentHomeBinding>(
         mDataBinding!!.recyHotgood.adapter = mHotGoods
 
     }
-
     //初始化Topicgoods
     private fun initTopicgoods(topicList: List<HomeData.Topic>) {
         mDataBinding!!.recyTopic.layoutManager =
@@ -124,7 +135,6 @@ class HomeFragment() : BaseFragment<HomeViewModel, FragmentHomeBinding>(
         mTopicfoods = HomeTopicfoodsAdpter(context, topicList)
         recy_topic.adapter = mTopicfoods
     }
-
     //初始化CategoryList
     private fun initCategoryList(categoryList: List<HomeData.Category>) {
 
@@ -136,5 +146,6 @@ class HomeFragment() : BaseFragment<HomeViewModel, FragmentHomeBinding>(
         mCategory = HomeCategoryAdpter(context, categoryList)
         recy_category.adapter = mCategory
     }
+
 
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="adpter_home_newgoods_title_pwadpter"
+            type="com.example.shop.bean.home.GoodsData.FilterCategory" />
+        <variable
+            name="ItemClick"
+            type="com.example.myapplication.base.IItemClick" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        >
+
+        <TextView
+            android:id="@+id/pw_tv"
+            android:text="@{adpter_home_newgoods_title_pwadpter.name}"
+            android:gravity="center"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_30"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints"></TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,4 +1,4 @@
-package com.example.shop.fragment.home
+package com.example.shop.ui.home
 
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
