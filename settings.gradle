@@ -1,3 +1,3 @@
-
+include ':MyFramenwork'
 include ':app'
 rootProject.name = "MyKotlin"

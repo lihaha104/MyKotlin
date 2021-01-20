@@ -65,4 +65,12 @@ class SystemRepository {
     }
 
 
+
+    /*
+    * 购物车
+    * */
+    suspend fun getShopList()= withContext(Dispatchers.IO){
+        serviceApi.getShopList()
+    }
+
 }

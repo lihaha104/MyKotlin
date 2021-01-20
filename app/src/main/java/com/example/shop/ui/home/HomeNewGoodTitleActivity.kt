@@ -17,6 +17,7 @@ import com.example.shop.bean.home.GoodsData
 import com.example.shop.databinding.ActivityHomeNewGoodTitleBinding
 import com.example.shop.viewmodel.home.HomeGoodsViewModel
 import com.shop.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_home_new_good_title.*
 
 
 class HomeNewGoodTitleActivity :
@@ -44,46 +45,55 @@ class HomeNewGoodTitleActivity :
 
     override fun initView() {
         initText(mDataBinding.newgoodZonghe)//默认选中的文字为综合
+             jianting()
+           }
+
+    private fun jianting() {
         /*按钮选中监听*/
         mDataBinding.newgoodZonghe.setOnClickListener {
             initText(mDataBinding.newgoodZonghe)
             type = 0
             setIconType(type)
+            sort=DEFAULT
             categoryId = 1005001
-            order = DESC
-           /* if (popupWindow != null) {
-                popupWindow.dismiss()
-            } */
+            order = ASC
+            /* if (popupWindow != null) {
+                 popupWindow.dismiss()
+             } */
         }
         mDataBinding.newgoodPice.setOnClickListener {
-            initText(mDataBinding.newgoodPice)
-            if (type == 0) {
+            initText(newgood_pice)
+            if (type == 1) {
+                type = 2
+                setIconType(type)
+                sort = PRICE
+                order =DESC
+            } else if (type == 0) {
                 type = 1
                 setIconType(type)
                 order = ASC
-            } else if (type == 1) {
-                type = 2
-                setIconType(type)
-                order = DESC
+                sort = PRICE
             } else {
                 type = 1
                 setIconType(type)
                 order = ASC
+                sort =PRICE
             }
-            initData()
-           /* if (popupWindow != null) {
-                popupWindow.dismiss()
-            }*/
+            initVM()
+            /* if (popupWindow != null) {
+                 popupWindow.dismiss()
+             }*/
         }
         mDataBinding.newgoodKind.setOnClickListener {
             initText( mDataBinding.newgoodKind)
             type = 0
             setIconType(type)
-            initData()
+            initVM()
             //setPopw()
         }
 
     }
+
     //设置参数集合
     private fun initMap() : Map<String,String>{
        val map:HashMap<String,String> =HashMap()
@@ -153,12 +163,19 @@ class HomeNewGoodTitleActivity :
         pwrcy.layoutManager = GridLayoutManager(this, 5)
         //创建适配器
         pwrcy.adapter=HomeNewGoodsTitlePwAdpter(this,filterCategory!!)
-        /*val categoryId = data.id
-        val map:HashMap<String,String> =HashMap()
-        map.put("isNew", 1.toString() + "")
-        map.put("categoryId", categoryId.toString() + "")
-        *//*mViewModel.getNewgoods(initMap())
-        popupWindow.dismiss()*/
+        /*newGoodsTitlePwAdpter.addListClick(object : IListClick() {
+            fun itemClick(pos: Int) {
+                val filterCategoryBean: NewGoodsTitleBean.DataBeanX.FilterCategoryBean =
+                    filterCategory!![pos]
+                categoryId = filterCategoryBean.getId()
+                val stringStringHashMap =
+                    java.util.HashMap<String, String>()
+                stringStringHashMap["isNew"] = 1.toString() + ""
+                stringStringHashMap["categoryId"] = categoryId.toString() + ""
+                persenter.gethomenewgoodstitle(stringStringHashMap)
+                popupWindow!!.dismiss()
+            }
+        })*/
 
 
     }

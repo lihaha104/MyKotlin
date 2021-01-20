@@ -1,24 +1,24 @@
 package com.example.shop.ui.shop
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.example.shop.R
+import com.example.shop.databinding.FragmentShopBinding
+import com.example.shop.viewmodel.shop.ShopViewModel
+import com.shop.base.BaseFragment
 
 
-class ShopFragment : Fragment() {
-
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop, container, false)
-
-
+class ShopFragment : BaseFragment<ShopViewModel,FragmentShopBinding>(R.layout.fragment_shop,ShopViewModel::class.java) {
+    override fun initView() {
 
     }
 
+    override fun initVM() {
+    }
+
+    override fun initData() {
+    }
+
+    override fun initVariable() {
+    }
 
 
 }

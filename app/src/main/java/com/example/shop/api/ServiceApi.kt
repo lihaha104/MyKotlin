@@ -5,6 +5,7 @@ import com.example.shop.bean.home.BrandData
 import com.example.shop.bean.home.GoodsData
 import com.example.shop.bean.home.HomeData
 import com.example.shop.bean.home.TopicData
+import com.example.shop.bean.shop.ShopData
 
 import com.example.shop.bean.sort.SortData
 import com.example.shop.bean.sort.SortTabData
@@ -46,7 +47,9 @@ interface ServiceApi {
     @GET("catalog/current")//分类数据
     suspend fun getSort(@Query("id")id:Int):BaseBean<SortData>
 
-
+    /************购物车***************/
+    @GET("cart/index")
+    suspend fun getShopList():BaseBean<ShopData>
 
 
 
